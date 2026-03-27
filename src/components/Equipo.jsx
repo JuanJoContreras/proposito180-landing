@@ -9,17 +9,17 @@ const team = [
     img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
   },
   {
-    name: 'Consultor Senior',
-    role: 'Consultor en Transformación Cultural',
-    bio: 'Experto en diseño e implementación de procesos de cambio cultural en organizaciones complejas, con enfoque en bienestar y desempeño sostenible.',
-    expertise: ['Cultura Organizacional', 'Gestión del Cambio', 'Bienestar Laboral'],
+    name: 'Juan José Contreras',
+    role: 'Dirección Ejecutiva · Innovación',
+    bio: 'Metodología y Diseño de Programas. Experto en innovación organizacional y diseño de soluciones a medida para empresas e instituciones.',
+    expertise: ['Innovación', 'Metodología', 'Diseño de Programas'],
     img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
   },
   {
-    name: 'Especialista en Bienestar',
-    role: 'Consultora en Bienestar Organizacional',
-    bio: 'Especializada en programas de felicidad laboral y atención plena aplicada al contexto profesional, con formación en psicología positiva y neurociencias.',
-    expertise: ['Felicidad Laboral', 'Atención Plena', 'Psicología Positiva'],
+    name: 'David Flores',
+    role: 'Desarrollo Comercial · Expansión · Alianzas',
+    bio: 'Responsable de la expansión estratégica y el desarrollo de alianzas clave para Propósito 180 en todos los sectores.',
+    expertise: ['Desarrollo Comercial', 'Expansión', 'Alianzas Estratégicas'],
     img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
   },
 ]
@@ -28,71 +28,115 @@ export default function Equipo() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent-dark font-bold text-sm uppercase tracking-widest">
-            EQUIPO
-          </span>
-          <h2 className="section-title mt-3">
-            El equipo detrás de{' '}
-            <span className="text-primary-400">Propósito 180</span>
-          </h2>
-          <p className="section-subtitle mx-auto">
-            Profesionales con experiencia comprobada en estrategia, liderazgo 
-            y transformación organizacional.
-          </p>
+          <span className="text-accent-dark font-bold text-sm uppercase tracking-widest">EQUIPO</span>
+          <h2 className="section-title mt-3">El equipo detrás de{' '}<span className="text-primary-400">Propósito 180</span></h2>
+          <p className="section-subtitle mx-auto">Profesionales con experiencia comprobada en estrategia, liderazgo y transformación organizacional.</p>
         </div>
-
-        {/* Team grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {team.map((member, i) => (
-            <div
-              key={i}
-              className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white"
-            >
-              {/* Photo */}
+            <div key={i} className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white">
               <div className="relative overflow-hidden h-64">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <img src={member.img} alt={member.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-500/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <a
-                    href="#"
-                    className="text-white hover:text-accent transition-colors"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <FiLinkedin size={24} />
-                  </a>
+                  <a href="#" className="text-white hover:text-accent transition-colors" onClick={(e) => e.preventDefault()}><FiLinkedin size={24} /></a>
                 </div>
               </div>
-
-              {/* Content */}
               <div className="p-6">
-                <h3 className="font-heading font-bold text-xl text-primary-500 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-primary-400 font-semibold text-sm mb-3">
-                  {member.role}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {member.bio}
-                </p>
+                <h3 className="font-heading font-bold text-xl text-primary-500 mb-1">{member.name}</h3>
+                <p className="text-primary-400 font-semibold text-sm mb-3">{member.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">{member.bio}</p>
                 <div className="flex flex-wrap gap-2">
-                  {member.expertise.map((tag, j) => (
-                    <span
-                      key={j}
-                      className="px-3 py-1 bg-primary-50 text-primary-500 text-xs font-semibold rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {member.expertise.map((tag, j) => (<span key={j} className="px-3 py-1 bg-primary-50 text-primary-500 text-xs font-semibold rounded-full">{tag}</span>))}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-4">
+          <div className="text-center mb-10">
+            <span className="text-accent-dark font-bold text-sm uppercase tracking-widest">ESTRUCTURA</span>
+            <h3 className="text-2xl font-heading font-bold text-primary-500 mt-2">Organigrama del equipo</h3>
+          </div>
+          <div className="bg-gray-50 rounded-3xl p-8 shadow-inner overflow-x-auto">
+            <div className="flex justify-center mb-4">
+              <div className="bg-[#3d3580] text-white rounded-xl px-8 py-4 text-center min-w-[220px] shadow-lg">
+                <p className="font-bold text-base">Propósito 180 Consulting</p>
+                <p className="text-purple-200 text-xs mt-1">Liderazgo · Productividad · Cumplimiento</p>
+              </div>
+            </div>
+            <div className="flex justify-center mb-4"><div className="w-px h-8 bg-gray-400" /></div>
+            <div className="flex flex-col md:flex-row justify-center gap-4 mb-2">
+              <div className="bg-[#3d3580] text-white rounded-xl px-6 py-4 text-center min-w-[200px] shadow-md">
+                <p className="font-bold text-sm">Paulina Ruz</p>
+                <p className="text-purple-200 text-xs mt-1">Dirección Ejecutiva · Bienestar · Liderazgo</p>
+              </div>
+              <div className="bg-[#3d3580] text-white rounded-xl px-6 py-4 text-center min-w-[200px] shadow-md">
+                <p className="font-bold text-sm">Juan José Contreras</p>
+                <p className="text-purple-200 text-xs mt-1">Dirección Ejecutiva · Innovación · Metodología y Diseño de Programas</p>
+              </div>
+            </div>
+            <div className="text-center text-gray-400 text-xs italic my-3">nivel estratégico transversal</div>
+            <div className="flex justify-center mb-4">
+              <div className="bg-[#7b5a00] text-white rounded-xl px-8 py-4 text-center min-w-[220px] shadow-lg border-2 border-yellow-500">
+                <p className="font-bold text-base text-yellow-300">David Flores ★</p>
+                <p className="text-yellow-200 text-xs mt-1">Desarrollo Comercial · Expansión · Alianzas</p>
+              </div>
+            </div>
+            <div className="flex justify-center mb-4"><div className="w-px h-8 bg-gray-400" /></div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="flex flex-col gap-2">
+                <div className="bg-[#2d6a4f] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Bienestar</p><p className="text-green-200 text-xs">Progs. 2, 5, 9</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Catalina Ruz</p><p className="text-gray-300 text-xs">Yoga · Emocional</p></div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="bg-[#7b3f00] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Seguridad</p><p className="text-orange-200 text-xs">Progs. 3, 6, 12</p></div>
+                <div className="flex flex-col gap-2">
+                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">J. Cadiz</p><p className="text-gray-300 text-xs">ISO · DS 594</p></div>
+                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">E. Pérez</p><p className="text-gray-300 text-xs">Magia Laboral</p></div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="bg-[#7b2d2d] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Cumplimiento</p><p className="text-red-200 text-xs">Progs. 11, 12, 13</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Carolina Cabrera</p><p className="text-gray-300 text-xs">Ley Karin · DS 44</p></div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="bg-[#1b4332] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Sector Público</p><p className="text-green-300 text-xs">Progs. 4, 5, 6, 10</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">M. F. Vega</p><p className="text-gray-300 text-xs">ChileCompra · SENCE</p></div>
+              </div>
+            </div>
+            <div className="text-center text-gray-400 text-xs italic mb-4">programa transversal — todos los sectores</div>
+            <div className="flex justify-center mb-6">
+              <div className="bg-[#3d3580] text-white rounded-xl px-8 py-4 text-center max-w-sm w-full shadow-lg">
+                <p className="font-bold text-base">Programa Estrella — 90 días</p>
+                <p className="text-purple-200 text-xs mt-1">Todo el equipo · 5 fases · Informe de ROI documentado</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row justify-center gap-4 mb-6">
+              <div className="bg-[#1a4b6e] text-white rounded-xl px-6 py-3 text-center min-w-[140px] shadow-md"><p className="text-sm font-semibold">⛏ Minería</p></div>
+              <div className="bg-[#2d6a4f] text-white rounded-xl px-6 py-3 text-center min-w-[140px] shadow-md"><p className="text-sm font-semibold">🏛 Municipalidades</p></div>
+              <div className="bg-[#7b2d00] text-white rounded-xl px-6 py-3 text-center min-w-[140px] shadow-md"><p className="text-sm font-semibold">🏢 Empresas</p></div>
+            </div>
+            <div className="border-t border-gray-200 pt-4">
+              <p className="text-center text-gray-400 text-xs italic mb-3">metodología transversal</p>
+              <div className="flex flex-wrap justify-center gap-3 mb-3">
+                {[
+                  { color: 'bg-[#3d3580]', label: 'Dirección / Metodología' },
+                  { color: 'bg-[#7b5a00]', label: 'Desarrollo Comercial' },
+                  { color: 'bg-[#2d6a4f]', label: 'Bienestar' },
+                  { color: 'bg-[#7b3f00]', label: 'Seguridad' },
+                  { color: 'bg-[#7b2d2d]', label: 'Cumplimiento' },
+                  { color: 'bg-[#1b4332]', label: 'Sector Público' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-1.5">
+                    <span className={`w-3 h-3 rounded-sm ${item.color}`} />
+                    <span className="text-gray-500 text-xs">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-gray-400 text-xs">Backward Design · Kolb + Aula Invertida · Brinkerhoff Día 21</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
