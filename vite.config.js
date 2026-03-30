@@ -6,19 +6,23 @@ export default defineConfig({
   plugins: [react()],
 
   // Base URL del sitio
-  // Si el sitio va en la raíz del dominio: base: '/'
+  // Si el sitio va en la raiz del dominio: base: '/'
   // Si va en un subdirectorio, ej: base: '/proposito180/'
   base: '/',
 
   server: {
     port: 3000,
     host: '0.0.0.0',
-    allowedHosts: 'all',
+    allowedHosts: true,
+  },
+
+  preview: {
+    port: 4173,
+    host: '0.0.0.0',
+    allowedHosts: true,
   },
 
   build: {
-    // Carpeta de salida del build (se sube al cPanel)
-    outDir: 'dist',
     sourcemap: false,
     minify: 'terser',
 
@@ -33,10 +37,5 @@ export default defineConfig({
         },
       },
     },
-  },
-
-  preview: {
-    port: 4173,
-    host: true,
   },
 })
