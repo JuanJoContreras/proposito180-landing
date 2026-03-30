@@ -1,5 +1,5 @@
 import { FiLinkedin } from 'react-icons/fi'
-
+ 
 const team = [
   {
     name: 'Paulina Ruz',
