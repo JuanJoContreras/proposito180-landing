@@ -24,7 +24,7 @@ export default defineConfig({
 
   build: {
     sourcemap: false,
-    minify: 'terser',
+    minify: 'esbuild',
 
     // Separar chunks para mejor rendimiento
     rollupOptions: {
