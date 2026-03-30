@@ -1,1 +1,40 @@
-x
+name: Build and commit dist
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'dist/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Commit and push dist folder
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add dist/ -f
+          git diff --staged --quiet || git commit -m "ci: update dist build [skip ci]"
+          git push
