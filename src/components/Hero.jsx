@@ -4,7 +4,7 @@ const features = [
   'Liderazgo consciente',
   'Cultura organizacional positiva',
   'Felicidad y bienestar laboral',
-  'Atencion plena aplicada al trabajo',
+  'Atención plena aplicada al trabajo',
 ]
 
 export default function Hero() {
@@ -26,7 +26,7 @@ export default function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                alt="Equipo Proposito 180 en sesion estrategica"
+                alt="Equipo Propósito 180 en sesión estratégica"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-500/40 to-transparent" />
@@ -34,7 +34,7 @@ export default function Hero() {
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 max-w-[200px]">
               <p className="text-3xl font-black text-primary-500">+15</p>
-              <p className="text-sm text-gray-600 font-medium mt-1">anos de experiencia en transformacion organizacional</p>
+              <p className="text-sm text-gray-600 font-medium mt-1">años de experiencia en transformación organizacional</p>
             </div>
           </div>
 
@@ -52,9 +52,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Disenamos procesos de transformacion organizacional que integran
+              Diseñamos procesos de transformación organizacional que integran
               estrategia, desarrollo humano y herramientas de consciencia aplicada,
-              acompanando a equipos y organizaciones hacia culturas mas humanas,
+              acompañando a equipos y organizaciones hacia culturas más humanas,
               resilientes y sostenibles.
             </p>
 
@@ -72,7 +72,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={scrollToContact} className="btn-primary">
                 <FiCalendar className="mr-2" />
-                Agenda una conversacion estrategica
+                Agenda una conversación estratégica
               </button>
               <a
                 href="/PRESENTACION%20PROPOSITO180v1.pdf"
@@ -91,10 +91,10 @@ export default function Hero() {
         {/* Bottom stats bar */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-gray-200 pt-10">
           {[
-            { label: 'Diagnostico', desc: 'Analisis de necesidades y objetivos' },
-            { label: 'Diseno', desc: 'Programas adaptados a cada organizacion' },
-            { label: 'Implementacion', desc: 'Acompanamiento estrategico a equipos' },
-            { label: 'Seguimiento', desc: 'Evaluacion y fortalecimiento continuo' },
+            { label: 'Diagnóstico', desc: 'Análisis de necesidades y objetivos' },
+            { label: 'Diseño', desc: 'Programas adaptados a cada organización' },
+            { label: 'Implementación', desc: 'Acompañamiento estratégico a equipos' },
+            { label: 'Seguimiento', desc: 'Evaluación y fortalecimiento continuo' },
           ].map((item, i) => (
             <div key={i} className="text-center">
               <p className="font-heading font-bold text-primary-400 text-lg">{item.label}</p>
