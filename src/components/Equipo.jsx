@@ -6,14 +6,14 @@ const team = [
     role: 'Fundadora y Directora',
     bio: 'Especialista en estrategia organizacional y liderazgo consciente con mas de 15 anos de experiencia acompanando procesos de transformacion en organizaciones publicas y privadas.',
     expertise: ['Estrategia Organizacional', 'Liderazgo Consciente', 'Mindfulness Corporativo'],
-    img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80',
+    img: '/paulina-ruz.jpg',
   },
   {
     name: 'Juan Jose Contreras',
     role: 'Direccion Ejecutiva - Innovacion',
     bio: 'Metodologia y Diseno de Programas. Experto en innovacion organizacional y diseno de soluciones a medida para empresas e instituciones.',
     expertise: ['Innovacion', 'Metodologia', 'Diseno de Programas'],
-    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    img: '/juan-jose-contreras.jpg',
   },
   
 ]
