@@ -15,13 +15,7 @@ const team = [
     expertise: ['Innovacion', 'Metodologia', 'Diseno de Programas'],
     img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
   },
-  {
-    name: 'David Flores',
-    role: 'Desarrollo Comercial - Expansion - Alianzas',
-    bio: 'Responsable de la expansion estrategica y el desarrollo de alianzas clave para Proposito 180 en todos los sectores.',
-    expertise: ['Desarrollo Comercial', 'Expansion', 'Alianzas Estrategicas'],
-    img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-  },
+  
 ]
 
 export default function Equipo() {
@@ -56,13 +50,13 @@ export default function Equipo() {
         <div className="mt-4">
           <div className="text-center mb-10">
             <span className="text-accent-dark font-bold text-sm uppercase tracking-widest">ESTRUCTURA</span>
-            <h3 className="text-2xl font-heading font-bold text-primary-500 mt-2">Organigrama del equipo</h3>
+            <h3 className="text-2xl font-heading font-bold text-primary-500 mt-2">Organigrama del Equipo</h3>
           </div>
           <div className="bg-gray-50 rounded-3xl p-8 shadow-inner overflow-x-auto">
             <div className="flex justify-center mb-4">
               <div className="bg-[#3d3580] text-white rounded-xl px-8 py-4 text-center min-w-[220px] shadow-lg">
                 <p className="font-bold text-base">Proposito 180 Consulting</p>
-                <p className="text-purple-200 text-xs mt-1">Liderazgo - Productividad - Cumplimiento</p>
+                <p className="text-purple-200 text-xs mt-1">Liderazgo - Productividad - Bienestar</p>
               </div>
             </div>
             <div className="flex justify-center mb-4"><div className="w-px h-8 bg-gray-400" /></div>
@@ -73,10 +67,10 @@ export default function Equipo() {
               </div>
               <div className="bg-[#3d3580] text-white rounded-xl px-6 py-4 text-center min-w-[200px] shadow-md">
                 <p className="font-bold text-sm">Juan Jose Contreras</p>
-                <p className="text-purple-200 text-xs mt-1">Direccion Ejecutiva - Innovacion - Metodologia y Diseno de Programas</p>
+                <p className="text-purple-200 text-xs mt-1">Direccion Ejecutiva - Innovacion - Metodologia y Diseño de Programas</p>
               </div>
             </div>
-            <div className="text-center text-gray-400 text-xs italic my-3">nivel estrategico transversal</div>
+            <div className="text-center text-gray-400 text-xs italic my-3">Nivel Estrategico Transversal</div>
             <div className="flex justify-center mb-4">
               <div className="bg-[#7b5a00] text-white rounded-xl px-8 py-4 text-center min-w-[220px] shadow-lg border-2 border-yellow-500">
                 <p className="font-bold text-base text-yellow-300">David Flores</p>
@@ -87,29 +81,29 @@ export default function Equipo() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="flex flex-col gap-2">
                 <div className="bg-[#2d6a4f] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Bienestar</p><p className="text-green-200 text-xs">Progs. 2, 5, 9</p></div>
-                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Catalina Ruz</p><p className="text-gray-300 text-xs">Yoga - Emocional</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">.</p><p className="text-gray-300 text-xs">Yoga - Emocional</p></div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="bg-[#7b3f00] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Seguridad</p><p className="text-orange-200 text-xs">Progs. 3, 6, 12</p></div>
                 <div className="flex flex-col gap-2">
-                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">J. Cadiz</p><p className="text-gray-300 text-xs">ISO - DS 594</p></div>
-                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">E. Perez</p><p className="text-gray-300 text-xs">Magia Laboral</p></div>
+                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">.</p><p className="text-gray-300 text-xs">ISO - DS 594</p></div>
+                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">.</p><p className="text-gray-300 text-xs">Magia Laboral</p></div>
                 </div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="bg-[#7b2d2d] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Cumplimiento</p><p className="text-red-200 text-xs">Progs. 11, 12, 13</p></div>
-                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Carolina Cabrera</p><p className="text-gray-300 text-xs">Ley Karin - DS 44</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">.</p><p className="text-gray-300 text-xs">Ley Karin - DS 44</p></div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="bg-[#1b4332] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Sector Publico</p><p className="text-green-300 text-xs">Progs. 4, 5, 6, 10</p></div>
-                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">M. F. Vega</p><p className="text-gray-300 text-xs">ChileCompra - SENCE</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">.</p><p className="text-gray-300 text-xs">ChileCompra - SENCE</p></div>
               </div>
             </div>
-            <div className="text-center text-gray-400 text-xs italic mb-4">programa transversal - todos los sectores</div>
+            <div className="text-center text-gray-400 text-xs italic mb-4">Programa Transversal - Todos los Sectores</div>
             <div className="flex justify-center mb-6">
               <div className="bg-[#3d3580] text-white rounded-xl px-8 py-4 text-center max-w-sm w-full shadow-lg">
                 <p className="font-bold text-base">Programa Estrella - 90 dias</p>
-                <p className="text-purple-200 text-xs mt-1">Todo el equipo - 5 fases - Informe de ROI documentado</p>
+                <p className="text-purple-200 text-xs mt-1">Todo el equipo - 5 fases - Informe documentado</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row justify-center gap-4 mb-6">
@@ -118,7 +112,7 @@ export default function Equipo() {
               <div className="bg-[#7b2d00] text-white rounded-xl px-6 py-3 text-center min-w-[140px] shadow-md"><p className="text-sm font-semibold">Empresas</p></div>
             </div>
             <div className="border-t border-gray-200 pt-4">
-              <p className="text-center text-gray-400 text-xs italic mb-3">metodologia transversal</p>
+              <p className="text-center text-gray-400 text-xs italic mb-3">Metodologia Transversal</p>
               <div className="flex flex-wrap justify-center gap-3 mb-3">
                 <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-[#3d3580]" /><span className="text-gray-500 text-xs">Direccion / Metodologia</span></div>
                 <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-[#7b5a00]" /><span className="text-gray-500 text-xs">Desarrollo Comercial</span></div>
@@ -126,8 +120,7 @@ export default function Equipo() {
                 <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-[#7b3f00]" /><span className="text-gray-500 text-xs">Seguridad</span></div>
                 <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-[#7b2d2d]" /><span className="text-gray-500 text-xs">Cumplimiento</span></div>
                 <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm bg-[#1b4332]" /><span className="text-gray-500 text-xs">Sector Publico</span></div>
-              </div>
-              <p className="text-center text-gray-400 text-xs">Backward Design - Kolb + Aula Invertida - Brinkerhoff Dia 21</p>
+              </div>              
             </div>
           </div>
         </div>
