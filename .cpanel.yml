@@ -1,21 +1,5 @@
 ---
-# ============================================================
-# .cpanel.yml - Deploy automático via Git en cPanel
-# ============================================================
-# Este archivo permite desplegar automáticamente el build
-# de producción al conectar el repositorio con cPanel Git.
-#
-# IMPORTANTE: Este archivo despliega la carpeta /dist
-# que se genera con "npm run build".
-#
-# Configuración en cPanel:
-# 1. cPanel > Git Version Control > Create
-# 2. Repository URL: https://github.com/JuanJoContreras/proposito180-landing
-# 3. Deploy Path: /home/tecnoinver/public_html (o el subdominio)
-# ============================================================
-
 deployment:
   tasks:
-    # Instalar dependencias de Node.js
-    - export DEPLOYPATH=/home/tecnoinver/public_html/
+    - export DEPLOYPATH=/home/iruzspa1/public_html/proposito180.cl/
     - /bin/cp -R dist/. $DEPLOYPATH
