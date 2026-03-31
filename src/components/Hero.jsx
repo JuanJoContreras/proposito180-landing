@@ -4,7 +4,7 @@ const features = [
   'Liderazgo consciente',
   'Cultura organizacional positiva',
   'Felicidad y bienestar laboral',
-  'Atención plena aplicada al trabajo',
+  'Atencion plena aplicada al trabajo',
 ]
 
 export default function Hero() {
@@ -20,13 +20,13 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
+
           {/* Image side */}
           <div className="relative order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                alt="Equipo Propósito 180 en sesión estratégica"
+                alt="Equipo Proposito 180 en sesion estrategica"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-500/40 to-transparent" />
@@ -34,7 +34,7 @@ export default function Hero() {
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 max-w-[200px]">
               <p className="text-3xl font-black text-primary-500">+15</p>
-              <p className="text-sm text-gray-600 font-medium mt-1">años de experiencia en transformación organizacional</p>
+              <p className="text-sm text-gray-600 font-medium mt-1">anos de experiencia en transformacion organizacional</p>
             </div>
           </div>
 
@@ -52,9 +52,9 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Diseñamos procesos de transformación organizacional que integran 
-              estrategia, desarrollo humano y herramientas de consciencia aplicada, 
-              acompañando a equipos y organizaciones hacia culturas más humanas, 
+              Disenamos procesos de transformacion organizacional que integran
+              estrategia, desarrollo humano y herramientas de consciencia aplicada,
+              acompanando a equipos y organizaciones hacia culturas mas humanas,
               resilientes y sostenibles.
             </p>
 
@@ -72,12 +72,14 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={scrollToContact} className="btn-primary">
                 <FiCalendar className="mr-2" />
-                Agenda una conversación estratégica
+                Agenda una conversacion estrategica
               </button>
               <a
-                href="#"
+                href="/PRESENTACION%20PROPOSITO180v1.pdf"
                 className="btn-outline"
-                onClick={(e) => { e.preventDefault(); alert('Brochure disponible próximamente') }}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
               >
                 <FiDownload className="mr-2" />
                 Descarga brochure
@@ -89,10 +91,10 @@ export default function Hero() {
         {/* Bottom stats bar */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-gray-200 pt-10">
           {[
-            { label: 'Diagnóstico', desc: 'Análisis de necesidades y objetivos' },
-            { label: 'Diseño', desc: 'Programas adaptados a cada organización' },
-            { label: 'Implementación', desc: 'Acompañamiento estratégico a equipos' },
-            { label: 'Seguimiento', desc: 'Evaluación y fortalecimiento continuo' },
+            { label: 'Diagnostico', desc: 'Analisis de necesidades y objetivos' },
+            { label: 'Diseno', desc: 'Programas adaptados a cada organizacion' },
+            { label: 'Implementacion', desc: 'Acompanamiento estrategico a equipos' },
+            { label: 'Seguimiento', desc: 'Evaluacion y fortalecimiento continuo' },
           ].map((item, i) => (
             <div key={i} className="text-center">
               <p className="font-heading font-bold text-primary-400 text-lg">{item.label}</p>
@@ -104,5 +106,3 @@ export default function Hero() {
     </section>
   )
 }
- 
- 
