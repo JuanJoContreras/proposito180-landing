@@ -31,9 +31,11 @@ jobs:
         run: npm run build
 
       - name: Commit and push dist folder
-        run: |
+        run: |  
+          cp public/send-contact.php dist/
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add dist/ -f
           git diff --staged --quiet || git commit -m "ci: update dist build [skip ci]"
           git push
+
