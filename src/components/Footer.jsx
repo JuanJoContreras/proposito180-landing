@@ -89,7 +89,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-3 text-sm text-white/70">
               <p>📧 contacto@proposito180.cl</p>
-              <p>📞 +56 9 XXXX XXXX</p>
+                                          <p>📞 +56 9 6845 9404</p>
               <p>📍 Santiago, Chile</p>
             </div>
             <div className="mt-6">
