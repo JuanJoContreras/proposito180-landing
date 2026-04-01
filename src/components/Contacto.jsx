@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCalendar } from 'react-icons/fi'
 
+const EMAILS = [
+  'contacto@proposito180.cl',
+  'comercial@proposito180.cl',
+  'juanjose@proposito180.cl',
+  'marketing.proposito180@gmail.com',
+]
+
 const regionesComunas = {
   'Arica y Parinacota': ['Arica', 'Camarones', 'Putre', 'General Lagos'],
   'Tarapacá': ['Iquique', 'Alto Hospicio', 'Pozo Almonte', 'Camiña', 'Colchane', 'Huara', 'Pica'],
@@ -33,6 +40,7 @@ export default function Contacto() {
   })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -48,9 +56,42 @@ export default function Contacto() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1000))
-    setSent(true)
-    setLoading(false)
+    setError('')
+    try {
+      const body = new FormData()
+      body.append('access_key', 'proposito180-web3forms')
+      body.append('subject', 'Nuevo contacto desde Propósito 180 - ' + form.nombre)
+      body.append('from_name', form.nombre)
+      body.append('email', form.email)
+      EMAILS.forEach((mail) => body.append('to', mail))
+      body.append('Teléfono', form.telefono)
+      body.append('Organización', form.organizacion || 'No especificada')
+      body.append('Región', form.region || 'No especificada')
+      body.append('Comuna', form.comuna || 'No especificada')
+      body.append('Servicio de interés', form.servicio || 'No especificado')
+      body.append('Mensaje', form.mensaje)
+      const mailtoParams = [
+        'subject=' + encodeURIComponent('Nuevo contacto Propósito 180 - ' + form.nombre),
+        'cc=' + encodeURIComponent(EMAILS.slice(1).join(',')),
+        'body=' + encodeURIComponent(
+          'Nombre: ' + form.nombre + '\n' +
+          'Email: ' + form.email + '\n' +
+          'Teléfono: ' + form.telefono + '\n' +
+          'Organización: ' + (form.organizacion || 'No especificada') + '\n' +
+          'Región: ' + (form.region || 'No especificada') + '\n' +
+          'Comuna: ' + (form.comuna || 'No especificada') + '\n' +
+          'Servicio de interés: ' + (form.servicio || 'No especificado') + '\n\n' +
+          'Mensaje:\n' + form.mensaje
+        )
+      ].join('&')
+      window.location.href = 'mailto:' + EMAILS[0] + '?' + mailtoParams
+      await new Promise((r) => setTimeout(r, 1500))
+      setSent(true)
+    } catch (err) {
+      setError('Hubo un problema al enviar. Por favor inténtalo nuevamente.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClass = 'w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent text-sm transition-all'
@@ -86,7 +127,7 @@ export default function Contacto() {
                 </div>
                 <div>
                   <p className="text-white/60 text-xs uppercase tracking-wide">Teléfono</p>
-                  <p className="text-white font-medium">+56 9 XXXX XXXX</p>
+                  <p className="text-white font-medium">+56 9 6845 9404</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -100,9 +141,10 @@ export default function Contacto() {
               </div>
             </div>
             <a
-              href="#"
+              href="https://wa.me/56968459404"
               className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 border border-white/20"
-              onClick={(e) => e.preventDefault()}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <FiCalendar size={20} className="text-accent" />
               Agenda directamente en mi calendario
@@ -192,6 +234,10 @@ export default function Contacto() {
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Mensaje *</label>
                   <textarea name="mensaje" value={form.mensaje} onChange={handleChange} required rows={4} placeholder="Cuéntanos sobre tu organización y qué desafíos estás enfrentando..." className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent text-sm transition-all resize-none" />
                 </div>
+
+                {error && (
+                  <p className="text-red-500 text-sm text-center">{error}</p>
+                )}
 
                 <button type="submit" disabled={loading} className="w-full btn-primary justify-center text-base py-4 disabled:opacity-70 disabled:cursor-not-allowed">
                   {loading ? (
