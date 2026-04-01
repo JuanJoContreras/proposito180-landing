@@ -1,13 +1,6 @@
 import { useState } from 'react'
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCalendar } from 'react-icons/fi'
 
-const EMAILS = [
-  'contacto@proposito180.cl',
-  'comercial@proposito180.cl',
-  'juanjose@proposito180.cl',
-  'marketing.proposito180@gmail.com',
-]
-
 const regionesComunas = {
   'Arica y Parinacota': ['Arica', 'Camarones', 'Putre', 'General Lagos'],
   'Tarapacá': ['Iquique', 'Alto Hospicio', 'Pozo Almonte', 'Camiña', 'Colchane', 'Huara', 'Pica'],
@@ -29,14 +22,8 @@ const regionesComunas = {
 
 export default function Contacto() {
   const [form, setForm] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    organizacion: '',
-    servicio: '',
-    region: '',
-    comuna: '',
-    mensaje: '',
+    nombre: '', email: '', telefono: '', organizacion: '',
+    servicio: '', region: '', comuna: '', mensaje: '',
   })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -58,37 +45,19 @@ export default function Contacto() {
     setLoading(true)
     setError('')
     try {
-      const body = new FormData()
-      body.append('access_key', 'proposito180-web3forms')
-      body.append('subject', 'Nuevo contacto desde Propósito 180 - ' + form.nombre)
-      body.append('from_name', form.nombre)
-      body.append('email', form.email)
-      EMAILS.forEach((mail) => body.append('to', mail))
-      body.append('Teléfono', form.telefono)
-      body.append('Organización', form.organizacion || 'No especificada')
-      body.append('Región', form.region || 'No especificada')
-      body.append('Comuna', form.comuna || 'No especificada')
-      body.append('Servicio de interés', form.servicio || 'No especificado')
-      body.append('Mensaje', form.mensaje)
-      const mailtoParams = [
-        'subject=' + encodeURIComponent('Nuevo contacto Propósito 180 - ' + form.nombre),
-        'cc=' + encodeURIComponent(EMAILS.slice(1).join(',')),
-        'body=' + encodeURIComponent(
-          'Nombre: ' + form.nombre + '\n' +
-          'Email: ' + form.email + '\n' +
-          'Teléfono: ' + form.telefono + '\n' +
-          'Organización: ' + (form.organizacion || 'No especificada') + '\n' +
-          'Región: ' + (form.region || 'No especificada') + '\n' +
-          'Comuna: ' + (form.comuna || 'No especificada') + '\n' +
-          'Servicio de interés: ' + (form.servicio || 'No especificado') + '\n\n' +
-          'Mensaje:\n' + form.mensaje
-        )
-      ].join('&')
-      window.location.href = 'mailto:' + EMAILS[0] + '?' + mailtoParams
-      await new Promise((r) => setTimeout(r, 1500))
-      setSent(true)
-    } catch (err) {
-      setError('Hubo un problema al enviar. Por favor inténtalo nuevamente.')
+      const res = await fetch('/send-contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSent(true)
+      } else {
+        setError(data.message || 'Error al enviar. Inténtalo nuevamente.')
+      }
+    } catch {
+      setError('Error de conexión. Por favor escríbenos a contacto@proposito180.cl')
     } finally {
       setLoading(false)
     }
@@ -101,8 +70,6 @@ export default function Contacto() {
     <section className="py-20 md:py-28 bg-gradient-to-br from-primary-500 to-primary-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-          {/* Left - Info */}
           <div className="text-white">
             <span className="text-accent font-bold text-sm uppercase tracking-widest">CONTACTO</span>
             <h2 className="font-heading text-4xl md:text-5xl font-black mt-3 mb-6 leading-tight">
@@ -150,8 +117,6 @@ export default function Contacto() {
               Agenda directamente en mi calendario
             </a>
           </div>
-
-          {/* Right - Form */}
           <div className="bg-white rounded-2xl p-8 shadow-2xl">
             {sent ? (
               <div className="text-center py-8">
@@ -167,8 +132,6 @@ export default function Contacto() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-
-                {/* Nombre + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Nombre *</label>
@@ -179,8 +142,6 @@ export default function Contacto() {
                     <input type="email" name="email" value={form.email} onChange={handleChange} required placeholder="tu@email.com" className={inputClass} />
                   </div>
                 </div>
-
-                {/* Teléfono + Organización */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Teléfono *</label>
@@ -191,8 +152,6 @@ export default function Contacto() {
                     <input type="text" name="organizacion" value={form.organizacion} onChange={handleChange} placeholder="Nombre de tu organización" className={inputClass} />
                   </div>
                 </div>
-
-                {/* Región + Comuna */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">Región</label>
@@ -213,8 +172,6 @@ export default function Contacto() {
                     </select>
                   </div>
                 </div>
-
-                {/* Servicio de interés */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Servicio de interés</label>
                   <select name="servicio" value={form.servicio} onChange={handleChange} className={selectClass}>
@@ -228,17 +185,11 @@ export default function Contacto() {
                     <option value="otro">Otro</option>
                   </select>
                 </div>
-
-                {/* Mensaje */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Mensaje *</label>
                   <textarea name="mensaje" value={form.mensaje} onChange={handleChange} required rows={4} placeholder="Cuéntanos sobre tu organización y qué desafíos estás enfrentando..." className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent text-sm transition-all resize-none" />
                 </div>
-
-                {error && (
-                  <p className="text-red-500 text-sm text-center">{error}</p>
-                )}
-
+                {error && <p className="text-red-500 text-sm text-center bg-red-50 p-3 rounded-lg">{error}</p>}
                 <button type="submit" disabled={loading} className="w-full btn-primary justify-center text-base py-4 disabled:opacity-70 disabled:cursor-not-allowed">
                   {loading ? (
                     <span className="flex items-center gap-2">
@@ -246,13 +197,9 @@ export default function Contacto() {
                       Enviando...
                     </span>
                   ) : (
-                    <span className="flex items-center gap-2">
-                      <FiSend size={16} />
-                      Enviar mensaje
-                    </span>
+                    <span className="flex items-center gap-2"><FiSend size={16} />Enviar mensaje</span>
                   )}
                 </button>
-
               </form>
             )}
           </div>
