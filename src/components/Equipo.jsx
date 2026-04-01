@@ -82,22 +82,22 @@ export default function Equipo() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
               <div className="flex flex-col gap-2">
                 <div className="bg-[#2d6a4f] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Bienestar</p><p className="text-green-200 text-xs">Progs. 2, 5, 9</p></div>
-                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Catalina Ruz</p><p className="text-gray-300 text-xs">Yoga - Emocional</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Facilitador</p><p className="text-gray-300 text-xs">Yoga - Emocional</p></div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="bg-[#7b3f00] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Seguridad</p><p className="text-orange-200 text-xs">Progs. 3, 6, 12</p></div>
                 <div className="flex flex-col gap-2">
-                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">J. Cádiz</p><p className="text-gray-300 text-xs">ISO - DS 594</p></div>
-                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">E. Pérez</p><p className="text-gray-300 text-xs">Magia Laboral</p></div>
+                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">Facilitador</p><p className="text-gray-300 text-xs">ISO - DS 594</p></div>
+                  <div className="bg-gray-600 text-white rounded-xl px-4 py-2 text-center shadow-sm"><p className="font-bold text-xs">Facilitador</p><p className="text-gray-300 text-xs">Magia Laboral</p></div>
                 </div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="bg-[#7b2d2d] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Cumplimiento</p><p className="text-red-200 text-xs">Progs. 11, 12, 13</p></div>
-                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Carolina Cabrera</p><p className="text-gray-300 text-xs">Ley Karin - DS 44</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Facilitador</p><p className="text-gray-300 text-xs">Ley Karin - DS 44</p></div>
               </div>
               <div className="flex flex-col gap-2">
                 <div className="bg-[#1b4332] text-white rounded-xl px-4 py-3 text-center shadow-md"><p className="font-bold text-sm">Sector Público</p><p className="text-green-300 text-xs">Progs. 4, 5, 6, 10</p></div>
-                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">M. F. Vega</p><p className="text-gray-300 text-xs">ChileCompra - SENCE</p></div>
+                <div className="bg-gray-600 text-white rounded-xl px-4 py-3 text-center shadow-sm"><p className="font-bold text-xs">Facilitador</p><p className="text-gray-300 text-xs">ChileCompra - SENCE</p></div>
               </div>
             </div>
             <div className="text-center text-gray-400 text-xs italic mb-4">Programa Transversal - Todos los Sectores</div>
