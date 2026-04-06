@@ -33,8 +33,8 @@ export default function Hero() {
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-5 max-w-[200px]">
-              <p className="text-3xl font-black text-primary-500">+15</p>
-              <p className="text-sm text-gray-600 font-medium mt-1">años de experiencia en transformación organizacional</p>
+              <p className="text-3xl font-black text-primary-500">+5</p>
+              <p className="text-sm text-gray-600 font-medium mt-1">años de experiencia como equipo en transformación organizacional</p>
             </div>
           </div>
 
